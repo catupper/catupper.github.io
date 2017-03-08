@@ -9,8 +9,9 @@
 <body>
 <main>
   <h1>「田端でバタバタ」レギュレーション判定機</h1>
+  <p>全部ひらがなにして入力してね！</p>
   <form action="judge.html" method="get">
-    <input type="text" name="str" value="田端でバタバタ">
+    <input type="text" name="str" value="田端でバタバタ" pattern="^[ぁ-ゞ]+$">
     <input type="submit" value="判定">
   </form>
 </main>
