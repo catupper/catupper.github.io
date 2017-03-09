@@ -15,10 +15,18 @@
   <h1>判定結果</h1>
 <p style="font-size:600%;font-weight:bold;text-align:center">
 <script type="text/javascript">
-judge();
+document.write(judge());
 </script>
 </p>
-  <a href="index.html"><button>戻る</button></a>
+<a href="index.html"><button>戻る</button></a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://catupper.github.io/" data-size="large" data-text="hoge" id="fuga">Tweet</a> <script>
+  !function(){
+  document.getElementById('fuga').setAttribute('data-text', str() + "は" + judge());
+  }();
+</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
 </main>
 
 </body>

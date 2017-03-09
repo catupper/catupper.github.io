@@ -11,10 +11,16 @@ function _GET(){
     return get;
 }
 
+function str(){
+    var get = _GET();
+    return "「" + get['str'] + "」";
+}
+
 function judge(){
     var get = _GET();
     if('str' in get){
 	var str = get['str'];
+	var res = "";
 	if(/^[ぁ-ゞ|ー]+$/.test(str)){
             if(str.length < 7){
 		document.write("レギュレーション違反！");
@@ -26,18 +32,20 @@ function judge(){
 		str = str.substr(-7);
 		var ans = ba + ta + "で" + ba + ta + ba + ta;
 		if(str == ans){
-		    document.write("おもしろい！");
+		    res = "おもしろい！";
 		}
 		else{
-		    document.write("レギュレーション違反");
+		    res = "レギュレーション違反";
 		}
             }
 	}
 	else{
-            document.write("ひらがなでおねがい");
+            res = "ひらがなでおねがい";
 	}
     }
     else{
-        document.write("なんか変やで");
+        res = "なんか変やで";
     }
+
+    return res
 }
