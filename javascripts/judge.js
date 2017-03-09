@@ -23,7 +23,7 @@ function judge(){
 	var res = "";
 	if(/^[ぁ-ゞ|ー]+$/.test(str)){
             if(str.length < 7){
-		document.write("レギュレーション違反！");
+res = "レギュレーション違反！";
             }
             else{
 		var l = str.length;
@@ -42,10 +42,18 @@ function judge(){
 	else{
             res = "ひらがなでおねがい";
 	}
+
+	if(str == "西日暮里でぽりぽり"){
+	    res = "最高にいいダジャレ！"
+	}
+	if(str == "田端でバタバタ"){
+	    res = "王者の風格を感じる"
+	}
     }
     else{
         res = "なんか変やで";
     }
+
 
     return res
 }
