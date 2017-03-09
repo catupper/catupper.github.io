@@ -21,7 +21,7 @@
     var get = _GET();
     if('str' in get){
       var str = get['str'];
-      if(/^[ぁ-ゞ]+$/.test(str)){
+      if(/^[ぁ-ゞ|ー]+$/.test(str)){
         if(str.length < 7){
           document.write("レギュレーション違反！");
         }
