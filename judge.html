@@ -11,7 +11,7 @@
         var search = unescape(decodeURI(location.search));
         var requests = search.substr(1).split("&");
         for(var i = 0; i < requests.length; i++){
-            var r = requests.split("=");
+            var r = requests[i].split("=");
             get[r[0]] = r[1];
         }
     }
