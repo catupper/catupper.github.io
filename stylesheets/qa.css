@@ -1,0 +1,27 @@
+main {
+	width: 100%;
+	font-family: メイリオ;
+	font-size: 14px; /*全体のフォントサイズ*/
+}
+
+main dt {
+	background: #444; /* 「Q」タイトルの背景色 */
+	color: #fff; /* 「Q」タイトルの文字色 */
+	padding: 8px;
+	border-radius: 2px;
+}
+main dt:before {
+	content: "意見.";
+	font-weight: bold;
+	margin-right: 8px;
+}
+main dd {
+	margin: 24px 16px 40px 32px;
+	line-height: 140%;
+	text-indent: -24px;
+}
+main dd:before {
+	content: "回答.　";
+	font-weight: bold;
+	padding-left: -10px;
+}

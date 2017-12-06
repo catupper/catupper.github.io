@@ -1,0 +1,29 @@
+#QandA-1 {
+	width: 100%;
+	font-family: メイリオ;
+	font-size: 14px; /*全体のフォントサイズ*/
+}
+#QandA-1 h2 {
+
+}
+#QandA-1 dt {
+	background: #444; /* 「Q」タイトルの背景色 */
+	color: #fff; /* 「Q」タイトルの文字色 */
+	padding: 8px;
+	border-radius: 2px;
+}
+#QandA-1 dt:before {
+	content: "Q.";
+	font-weight: bold;
+	margin-right: 8px;
+}
+#QandA-1 dd {
+	margin: 24px 16px 40px 32px;
+	line-height: 140%;
+	text-indent: -24px;
+}
+#QandA-1 dd:before {
+	content: "A.";
+	font-weight: bold;
+	margin-right: 8px;
+}
