@@ -1,0 +1,24 @@
+Game = function RectNim(width, height){
+		this.width = width;
+		this.height = height;
+		this.tokens = [];
+		this.grundy = [];
+		this.turn = 0;
+		for(var i = 0;i < height;i++){
+				this.tokens.push([0,width-1]);
+				this.grundy.push(width);
+		}
+
+		this.isFinished = function(){
+				for(var i = 0;i < this.height;i++){
+						if(this.token[i][0] + 1 != this.token[i][1])return false;
+				}
+				return true;
+		}
+
+		this.update = function(){
+				this.
+		}
+}
+
+function 
