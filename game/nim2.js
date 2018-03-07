@@ -43,6 +43,7 @@ function RectNim(width, height, $parent, board=undefined){
 								else if(j == this.tokens[i][1])new_raw.append('<th width="20" name="' + name + '">\<</th>');								
 								else if(j > this.tokens[i][1])new_raw.append('<th width="20" name="' + name + '">-</th>');
 						}
+						new_raw.append('<p name="' + i + '">' + this.rest[i] + "</p>");
 						new_table.append(new_raw);
 				}
 				this.$parent.append(new_table);
@@ -59,7 +60,9 @@ function RectNim(width, height, $parent, board=undefined){
 								else if(j == this.tokens[i][1])$tmp.text("<");
 								else if(j > this.tokens[i][1])$tmp.text("-");
 						}
+						$('[name="'+i+'"]').text(this.rest[i]);
 				}
+				$('#grundy').text(this.grundy);
 		}
 
 		this.set = function(x, y){
