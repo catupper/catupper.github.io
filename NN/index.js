@@ -94,15 +94,15 @@ var NeuralNetwork = (function() {
     };
 
     /*
-    NN.prototype.train = function(pattern, p){
-        if(!this.step) this.step = 0;
-        var self = this;
-        return function(i){
-            self.update(pattern[i][0]);
-            self.backPropagate(pattern[i][1], p);
-            self.step++;
-        };
-    };
+			NN.prototype.train = function(pattern, p){
+      if(!this.step) this.step = 0;
+      var self = this;
+      return function(i){
+      self.update(pattern[i][0]);
+      self.backPropagate(pattern[i][1], p);
+      self.step++;
+      };
+			};
     */
 
     var rand = function(a, b) { return (b - a) * Math.random() + a; };
@@ -138,7 +138,7 @@ var NetworkVisualizer = (function(config) {
         var cx = margin + layer * (width - margin * 2) / (layerNum - 1);
         var cy = height / 2 + (index - (elemsNum - 1) / 2) * (size * 2.5);
         return [this.canvas.circle(cx, cy, size).attr({ 'stroke': color, 'stroke-width': '2' }),
-            this.canvas.text(cx, cy, text).attr({ 'fill': color, 'font-size': size * 0.7 })];
+								this.canvas.text(cx, cy, text).attr({ 'fill': color, 'font-size': size * 0.7 })];
     };
 
     NV.prototype.createNodes = function(elems) {
@@ -157,11 +157,11 @@ var NetworkVisualizer = (function(config) {
     NV.prototype.connect = function(from, to) {
         return this.canvas.path(
             Raphael.format('M{0},{1}L{2},{3}',
-                from.attr('cx') + from.attr('r') + 2,
-                from.attr('cy'),
-                to.attr('cx') - to.attr('r') - 2,
-                to.attr('cy')
-            )
+													 from.attr('cx') + from.attr('r') + 2,
+													 from.attr('cy'),
+													 to.attr('cx') - to.attr('r') - 2,
+													 to.attr('cy')
+													)
         ).attr('stroke', '#AAA');
     };
 
@@ -519,9 +519,9 @@ Demos[2] = (function() {
             var x0 = (x1 + x2) / 2;
             var y0 = 2 * f(x0) - (y1 + y2) / 2;
             return 'M'+ transform([x1, y1]).join(',') +
-                   'Q'+
-                   transform([x0, y0]).join(',') + ' ' +
-                   transform([x2, y2]).join(',');
+                'Q'+
+                transform([x0, y0]).join(',') + ' ' +
+                transform([x2, y2]).join(',');
         }
         var str = '';
         var dx = (ub - lb) / step;
@@ -778,7 +778,7 @@ Demos[4] = (function() {
 var demo = null;
 
 $(document).ready(function() {
-
+		
     $('#demos').change(function() {
         var num = $('#demos option:selected').val() | 0;
         demo.deinit();
@@ -828,4 +828,14 @@ $(document).ready(function() {
     if (demosNum < 1 || demosNum > 3) demosNum = 1;
     demo = new Demos[demosNum]();
     $('#demos').val(demosNum);
+
+		
+
 });
+		document.querySelector( '#network' ).addEventListener( 'click', function( event ) {
+				event.preventDefault();
+				zoom.to( { 
+						padding :100,
+						element: event.target
+								 } );
+		} );
