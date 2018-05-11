@@ -4,8 +4,8 @@ select {
 }
 #network {
     float:left;
-    width:600px;
-    height:400px;
+    width:1000px;
+    height:700px;
     border: 1px solid #666;
     margin-top:0.5em;
 }
@@ -85,4 +85,9 @@ select {
     padding:0 50px;
     color:red;
     line-height:240px;
+}
+
+#rightcolumn {
+		float: left;
+		margin-left: 10px;
 }
