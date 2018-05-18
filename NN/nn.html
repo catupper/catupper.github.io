@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>HTML5によるニューラルネットワークの可視化デモ / Neural Network Visualizing Demo - js do it</title>
 		<meta name="Description" content="" />
 		<meta name="Keywords"  content="" />
 
@@ -16,7 +15,6 @@
 		<html lang="en">
 			<head>
 				<meta charset="UTF-8">
-				<title>JavaScript Neural Network Demos</title>
 				<link rel="stylesheet" href="style.css" charset="utf-8">
 				<script src="./raphael-min.js"></script>
 				<script src="./jquery-1.11.1.min.js"></script>
@@ -27,14 +25,19 @@
 				<script src="./zoom.js"></script>
 			</head>
 			<body>
-				<h1>ニューラルネットワーク</h1>
+				<h1>ニューラルネットワークを構築してみよう</h1>
+				<p>ニューラルネットは、脳内のニューロンの電位の伝達の様子を模倣したモデルです</p>
+				<p>以下のネットワークは一番左の層に入力をいれ、それぞれ辺の「重み」をかけて、右の層に伝達する、というのを繰り返しています。赤色の場合正の数をかけており、青色の場合負の数をかけています。</p>
+				<p>学習データと、実際の計算結果を比べて、その誤差が小さくなるように、各辺の「重み」を微小に変化させます。どう変化させるかは微分などの数学の道具を使って決めます。</p>
+				<p>学習の様子は、真ん中の層をどのように設置するかによって大きく左右されます。層の個数や、層の中のニューロンの個数を調節して、学習のスピードを比べてみよう！</p>
+				<br>
 				<form action="#">
 					<select id="demos">
             <option value="1">1の個数が偶数か奇数か当てる</option>
             <option value="2">点をなぞる関数を作る</option>
             <option value="3">数字を読む</option>
 					</select>
-					| 隠れ層の個数 (コンマ区切りで)
+					| 隠れ層の個数をコンマ区切りで入力してね
           <input type="text" size="20" id="hlayers">
           <input type="button" id="changelayer" value="Change">
 				</form>
@@ -44,7 +47,7 @@
 						<div id="controller">
 							<form action="#">
 								<fieldset>
-									<legend>学習率</legend>
+									<legend>学習率(変化の勢い)</legend>
 									<div class="param">
 										<input type="range" value="0.5" min="0" max="1" step="0.01" id="rl">
 										<span id="rlview" class="view">0.5</span>
