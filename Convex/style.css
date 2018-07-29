@@ -1,0 +1,12 @@
+#field{
+ border: 1px solid #0066ff;
+}
+.point{
+  position:absolute;
+}
+.red{
+  color:#f00;
+}
+.blue{
+  color:#00f;
+}
