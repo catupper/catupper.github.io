@@ -42,8 +42,8 @@ function dict(a, b){
 }
 function onClick(e){
 		var canvas = document.getElementById("field");
-		var x = e.clientX - canvas.offsetLeft;
-		var y = e.clientY - canvas.offsetTop;
+		var x = e.pageX - canvas.offsetLeft;
+		var y = e.pageY - canvas.offsetTop;
 		add_or_delete = -1;
 		for(var i = 0;i < points.length;i++){
 				if(dict([x,y], points[i]) < 100)add_or_delete = i;
@@ -55,15 +55,13 @@ function onClick(e){
 				points.splice(add_or_delete,1);
 		}
 		var ch = convexHull([].concat(points));
-		console.log(points);
-		console.log(ch);
+
 		var ctx = canvas.getContext("2d");
 		ctx.fillStyle = "white";
 		ctx.fillRect(0,0,canvas.width, canvas.height);
 		for(var elem of points){
 				var node = canvas.getContext("2d");
 				node.beginPath();
-				console.log(elem);
 				node.strokeStyle = "#00FF00";
 				node.fillStyle = "#00FF00";
 				node.globalAlpha = "1.0";
@@ -89,12 +87,22 @@ function onClick(e){
 				var elem = ch[i];
 				if(i == 0)linect.moveTo(elem[0], elem[1]);
 				else linect.lineTo(elem[0], elem[1]);
-		
+				
 		}
 		linect.closePath();
 		linect.stroke();
 }
-console.log(document);
+
+function clear(e){
+		points = [];
+		var canvas = document.getElementById("field");
+		var ctx = canvas.getContext("2d");
+		ctx.fillStyle = "white";
+		ctx.fillRect(0,0,canvas.width, canvas.height);
+}
+
 window.onload = function(){
 		document.getElementById("field").addEventListener('click', onClick, false);
+		document.getElementById("clear").addEventListener('click', clear, false);
+		
 }
