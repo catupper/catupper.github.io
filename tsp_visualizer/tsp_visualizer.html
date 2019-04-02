@@ -7,8 +7,24 @@
 
   <body>
     <canvas id="field" width="800" height="600"></canvas>
+    <div>入力データ:
+      <ul>
+        <li><a href="https://catupper.github.io/spring2019/ja_JP/sourcecode/euclid_input1.txt">入力データ1</a>
+        <li><a href="https://catupper.github.io/spring2019/ja_JP/sourcecode/euclid_input2.txt">入力データ2</a>
+        <li><a href="https://catupper.github.io/spring2019/ja_JP/sourcecode/euclid_input3.txt">入力データ3</a>
+        <li><a href="https://catupper.github.io/spring2019/ja_JP/sourcecode/euclid_input4.txt">入力データ4</a>
+      </ul>
+
     <textarea id="input">点のデータ</textarea>
     <textarea id="route">ルートのデータ</textarea>
 		<button id="visualize" type="button">Visualize</button>
+    <select id="sample_input">
+      <option value="input1">入力1</option>
+      <option value="input2">入力2</option>
+      <option value="input3">入力3</option>
+      <option value="input4">入力4</option>
+    </select>
+    	<button id="setinput" type="button">Set Input</button>
+    </div>
   </body>
 </html>

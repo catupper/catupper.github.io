@@ -1,9 +1,27 @@
+function readTxt(url, elem){
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.send("");
+	var res;
+	request.onreadystatechange = function(){
+		//var text = document.createTextNode(decodeURI(request.responseText));
+		var text = decodeURI(request.responseText);
+		elem.value = text;
+	}
+}
+var input_data = [
+	"https://catupper.github.io/spring2019/ja_JP/sourcecode/point_euclid_input1.txt",
+	"https://catupper.github.io/spring2019/ja_JP/sourcecode/point_euclid_input2.txt",
+	"https://catupper.github.io/spring2019/ja_JP/sourcecode/point_euclid_input3.txt",
+	"https://catupper.github.io/spring2019/ja_JP/sourcecode/point_euclid_input4.txt"
+];
+
 function parsePoints(input){
 	return input.split('\n').map(x=>x.split(' ').map(x=>parseInt(x,10)));
 }
 
 function parseRoute(route){
-	return route.split('\n').map(x=>parseInt(x,10));
+	return route.replace(/\n/g,' ').trim().split(' ').map(x=>parseInt(x,10));
 }
 
 function draw(e){
@@ -36,6 +54,14 @@ function draw(e){
 		linect.stroke();
 }
 
+function setinput(){
+	var points = document.getElementById("input");
+	var val = document.getElementById("sample_input").selectedIndex;
+	console.log(val);
+	readTxt(input_data[val], points);
+}
+
 window.onload = function(){
 		document.getElementById("visualize").addEventListener('click', draw, false);
+		document.getElementById("setinput").addEventListener('click', setinput, false);
 }
