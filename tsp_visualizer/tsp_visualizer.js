@@ -77,16 +77,20 @@ function parseRoute(route){
 
 function setRoute(route){
 	document.getElementById("route").value = route.join(" ");
-	draw();
+}
+
+
+function clearCanvas(){
+		var canvas = document.getElementById("field");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "white";
+	ctx.fillRect(0,0,canvas.width, canvas.height);
 }
 
 function draw(e){
 		var canvas = document.getElementById("field");
 		var points = parsePoints(document.getElementById("input").value);
 		var route = parseRoute(document.getElementById("route").value);
-		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "white";
-		ctx.fillRect(0,0,canvas.width, canvas.height);
 		for(var elem of points){
 				var node = canvas.getContext("2d");
 				node.beginPath();
@@ -148,7 +152,9 @@ function two_opt(){
 			best_route = parseRoute(document.getElementById("route").value);
 			document.getElementById("best").innerHTML = best_dist;
 		}
-		draw_route(best_route, "#FF0000")
+		clearCanvas();
+		draw_route(best_route, "#FF0000");
+		draw();
 		i-=1;
 		document.getElementById("trial").innerHTML = i;
 	}, 1);
