@@ -15,20 +15,29 @@
         <li><a href="https://catupper.github.io/spring2019/ja_JP/sourcecode/euclid_input4.txt">入力データ4</a>
       </ul>
 
-    <textarea id="input">点のデータ</textarea>
-    <textarea id="route">ルートのデータ</textarea>
-		<button id="visualize" type="button">Visualize</button>
-    <select id="sample_input">
-      <option value="input1">入力1</option>
-      <option value="input2">入力2</option>
-      <option value="input3">入力3</option>
-      <option value="input4">入力4</option>
-    </select>
-    	<button id="setinput" type="button">Set Input</button>
-      <button id="annealing" type="button">Annealing</button>
-      Trial:<span id="trial"></span>
-      Dist:<span id="dist"></span>
-      Best:<span id="best"></span>
+      <textarea id="input">点のデータ</textarea>
+      <textarea id="route">ルートのデータ</textarea>
+      <p>①
+      <select id="sample_input">
+	<option value="input1">入力1</option>
+	<option value="input2">入力2</option>
+	<option value="input3">入力3</option>
+	<option value="input4">入力4</option>
+      </select>
+      </p>
+      <p>②<button id="setinput" type="button">Set Input</button></p>
+      <p>③<button id="visualize" type="button">Visualize</button></p>
+      <p>④<button id="annealing" type="button">Annealing</button></p>
+      <p>Trial:<span id="trial"></span></p>
+      <p>Dist:<span id="dist"></span></p>
+      <p>Best:<span id="best"></span></p>
+      <p>
+	<input type="range" name="bar" min="0" max="1000" step="1" value="500"
+	       onchange="changeValue(this.value)">
+	Temperture:<span id="temperture">200</span>/1000000
+	<script type="text/javascript">
+	</script>
+      </p>
     </div>
   </body>
 </html>
