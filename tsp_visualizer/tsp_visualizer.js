@@ -150,6 +150,7 @@ function two_opt(){
 		}
 		draw_route(best_route, "#FF0000")
 		i-=1;
+		document.getElementById("trial").innerHTML = i;
 	}, 1);
 	setRoute(best_route);
 }
