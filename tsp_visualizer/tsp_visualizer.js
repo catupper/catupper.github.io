@@ -144,7 +144,7 @@ function two_opt(){
 	var points = parsePoints(document.getElementById("input").value);
 	var best_dist = distsum(points, best_route);
 	var timer = setInterval(function(){
-		update_route(i / trial / 100000);
+		update_route(i / trial / 10000);
 		if(i < 0)clearInterval(timer);
 		var now_dist = distsum(points, parseRoute(document.getElementById("route").value));
 		if(now_dist < best_dist){
@@ -161,8 +161,13 @@ function two_opt(){
 	setRoute(best_route);
 }
 
+function visualize(){
+	clearCanvas();
+	draw();
+}
+
 window.onload = function(){
-		document.getElementById("visualize").addEventListener('click', draw, false);
+		document.getElementById("visualize").addEventListener('click', visualize, false);
 		document.getElementById("setinput").addEventListener('click', setinput, false);
 		document.getElementById("annealing").addEventListener('click', two_opt, false);
 }
