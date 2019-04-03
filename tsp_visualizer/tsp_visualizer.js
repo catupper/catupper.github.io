@@ -144,7 +144,7 @@ function two_opt(){
 	var points = parsePoints(document.getElementById("input").value);
 	var best_dist = distsum(points, best_route);
 	var timer = setInterval(function(){
-		update_route(i / trial / 1000);
+		update_route(i / trial / 100000);
 		if(i < 0)clearInterval(timer);
 		var now_dist = distsum(points, parseRoute(document.getElementById("route").value));
 		if(now_dist < best_dist){
